@@ -3,7 +3,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+route::resource('sales', SalesController::class);
+route::delete('sales/{id}', [SalesController::class, 'destroy']);
+Route::put('sales/{id}', [SalesController::class, 'update']);
